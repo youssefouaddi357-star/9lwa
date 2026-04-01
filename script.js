@@ -10,8 +10,11 @@ document.querySelector("#data-form").addEventListener("submit", function(e) {
     body: new URLSearchParams(formData).toString(),
   })
     .then(() => {
-      document.getElementById("response-msg").innerHTML = "Merci ! Vos données ont été envoyées.";
+      document.getElementById("response-msg").innerHTML = "✅ Merci ! Vos données ont été envoyées avec succès.";
       myForm.reset();
     })
-    .catch((error) => alert(error));
+    .catch((error) => {
+      document.getElementById("response-msg").innerHTML = "❌ Erreur lors de l'envoi. Réessayez.";
+      console.error(error);
+    });
 });
