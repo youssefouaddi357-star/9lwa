@@ -36,7 +36,7 @@ input, select, textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Important pour que le padding ne dépasse pas */
+    box-sizing: border-box;
 }
 
 .btn {
@@ -47,6 +47,7 @@ input, select, textarea {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.3s;
 }
 
 .btn:hover {
