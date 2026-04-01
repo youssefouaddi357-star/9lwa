@@ -1,14 +1,10 @@
-:root { --blue: #2563eb; --bg: #f1f5f9; }
-body { font-family: sans-serif; background: var(--bg); margin: 0; color: #334155; }
-.container { max-width: 800px; margin: auto; padding: 20px; }
-header { background: var(--blue); color: white; text-align: center; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-fieldset { background: white; border: none; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-legend { font-weight: bold; color: var(--blue); font-size: 1.2em; margin-bottom: 10px; }
+body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; color: #1e293b; margin: 0; }
+.container { max-width: 800px; margin: 20px auto; padding: 20px; }
+header { background: #2563eb; color: white; text-align: center; padding: 20px; border-radius: 8px; }
+fieldset { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 20px; }
+legend { font-weight: bold; color: #2563eb; padding: 0 10px; }
 .form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
-label { font-weight: 500; margin-bottom: 5px; }
-input, select { padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.checkbox-list { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 10px; }
-.score-display { background: #dbeafe; padding: 10px; margin-top: 10px; font-weight: bold; border-radius: 4px; border-left: 4px solid var(--blue); }
-.btn { background: var(--blue); color: white; border: none; width: 100%; padding: 15px; border-radius: 5px; font-size: 1.1em; cursor: pointer; transition: 0.3s; }
+.score-box { background: #eff6ff; padding: 10px; margin-top: 10px; font-weight: bold; border-radius: 4px; }
+.btn { background: #2563eb; color: white; width: 100%; padding: 15px; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer; margin-top: 20px; }
 .btn:hover { background: #1d4ed8; }
