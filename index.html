@@ -3,152 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enquête ISPITSA - Chutes Personnes Âgées</title>
+    <title>Questionnaire ISPITSA - V3</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="main-container">
+        <header class="form-header">
+            <img src="https://via.placeholder.com/100x50?text=ISPITSA" alt="Logo" class="logo">
             <h1>Facteurs associés aux chutes chez les personnes âgées</h1>
-            <p>ISPITSA | Période : 2026</p>
-        </div>
-    </header>
+            <p class="subtitle">Étude Gériatrique - Période 2026</p>
+        </header>
 
-    <main class="container">
-        <form id="data-form" name="enquete-v3-finale" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="enquete-v3-finale" />
+        <form id="main-survey" name="survey-v3-professional" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="survey-v3-professional" />
 
-            <fieldset>
-                <legend>Données sociodémographiques</legend>
-                <div class="form-group">
-                    <label>1. Lieu de collecte *</label>
-                    <select name="V1_Lieu" required><option value="Hopital">Hôpital</option><option value="Centre de sante">Centre de santé</option></select>
+            <section class="form-section">
+                <h2 class="section-title">I. Données sociodémographiques</h2>
+                <div class="input-grid">
+                    <div class="field">
+                        <label>1. Lieu de collecte *</label>
+                        <select name="V1" required><option value="Hôpital">Hôpital</option><option value="Centre de santé">Centre de santé</option></select>
+                    </div>
+                    <div class="field">
+                        <label>2. Âge *</label>
+                        <input type="number" name="V2" min="65" required placeholder="Min 65 ans">
+                    </div>
+                    <div class="field">
+                        <label>3. Sexe *</label>
+                        <select name="V3" required><option value="Homme">Homme</option><option value="Femme">Femme</option></select>
+                    </div>
+                    <div class="field">
+                        <label>4. Situation matrimoniale</label>
+                        <select name="V4"><option value="Célibataire">Célibataire</option><option value="Marié(e)">Marié(e)</option><option value="Veuf(ve)">Veuf(ve)</option><option value="Divorcé(e)">Divorcé(e)</option></select>
+                    </div>
+                    <div class="field">
+                        <label>5. Niveau d'instruction</label>
+                        <select name="V5"><option value="Analphabète">Analphabète</option><option value="Primaire">Primaire</option><option value="Secondaire">Secondaire</option><option value="Supérieur">Supérieur</option></select>
+                    </div>
+                    <div class="field">
+                        <label>6. Provenance</label>
+                        <select name="V6"><option value="Urbain">Urbain</option><option value="Rural">Rural</option></select>
+                    </div>
+                    <div class="field">
+                        <label>7. Lieu de résidence</label>
+                        <select name="V7"><option value="Domicile">Domicile</option><option value="Maison de retraite">Maison de retraite</option><option value="Autre">Autre</option></select>
+                    </div>
+                    <div class="field full">
+                        <label>8. Si 'Autre', précisez (V8)</label>
+                        <input type="text" name="V8">
+                    </div>
+                    <div class="field">
+                        <label>9. Avec qui vivez-vous ?</label>
+                        <select name="V9"><option value="Seul(e)">Seul(e)</option><option value="Famille">Famille</option><option value="Autre">Autre</option></select>
+                    </div>
+                    <div class="field full">
+                        <label>10. Si 'Autre', précisez (V10)</label>
+                        <input type="text" name="V10">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>2. Âge *</label>
-                    <input type="number" name="V2_Age" min="65" required>
-                </div>
-                <div class="form-group">
-                    <label>3. Sexe *</label>
-                    <select name="V3_Sexe" required><option value="Homme">Homme</option><option value="Femme">Femme</option></select>
-                </div>
-                <div class="form-group">
-                    <label>4. Situation matrimoniale</label>
-                    <select name="V4_Matrimoniale"><option value="Celibataire">Célibataire</option><option value="Marie">Marié(e)</option><option value="Veuf">Veuf(ve)</option><option value="Divorce">Divorcé(e)</option></select>
-                </div>
-                <div class="form-group">
-                    <label>5. Niveau d'instruction</label>
-                    <select name="V5_Instruction"><option value="Analphabete">Analphabète</option><option value="Primaire">Primaire</option><option value="Secondaire">Secondaire</option><option value="Superieur">Supérieur</option></select>
-                </div>
-                <div class="form-group">
-                    <label>9. Avec qui vivez-vous ?</label>
-                    <select name="V9_Vie_Seul"><option value="Seul">Seul(e)</option><option value="Famille">Famille</option><option value="Autre">Autre</option></select>
-                </div>
-            </fieldset>
+            </section>
 
-            <fieldset>
-                <legend>Antécédents de chutes</legend>
-                <div class="form-group">
-                    <label>11. Aide à la marche ?</label>
-                    <select name="V11_Aide"><option value="Non">Non</option><option value="Oui">Oui</option></select>
+            <section class="form-section">
+                <h2 class="section-title">II. Antécédents de chutes</h2>
+                <div class="input-grid">
+                    <div class="field">
+                        <label>11. Utilisez-vous une aide à la marche ?</label>
+                        <select name="V11"><option value="Non">Non</option><option value="Oui">Oui</option></select>
+                    </div>
+                    <div class="field">
+                        <label>12. Si oui (V12)</label>
+                        <select name="V12"><option value="">-</option><option value="Canne">Canne</option><option value="Déambulateur">Déambulateur</option><option value="Autre">Autre</option></select>
+                    </div>
+                    <div class="field full">
+                        <label>13. Si 'Autre', précisez (V13)</label>
+                        <input type="text" name="V13">
+                    </div>
+                    <div class="field">
+                        <label>14. Chute ces 12 derniers mois ?</label>
+                        <select name="V14"><option value="Non">Non</option><option value="Oui">Oui</option></select>
+                    </div>
+                    <div class="field">
+                        <label>15. Nombre de chutes (V15)</label>
+                        <input type="number" name="V15" min="0">
+                    </div>
+                    <div class="field">
+                        <label>16. État de conscience (V16)</label>
+                        <select name="V16"><option value="Conscient">Conscient</option><option value="Perte de connaissance">Perte de connaissance</option></select>
+                    </div>
+                    <div class="field">
+                        <label>17. Lieu de la chute (V17)</label>
+                        <select name="V17"><option value="Domicile">Domicile</option><option value="Extérieur">Extérieur</option><option value="Autre">Autre</option></select>
+                    </div>
+                    <div class="field full">
+                        <label>18. Si 'Autre', précisez (V18)</label>
+                        <input type="text" name="V18">
+                    </div>
+                    <div class="field">
+                        <label>19. Conséquences (V19)</label>
+                        <select name="V19"><option value="Aucune">Aucune</option><option value="Fracture">Fracture</option><option value="Plaie">Plaie/Contusion</option><option value="Hospitalisation">Hospitalisation</option></select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>14. Chute au cours des 12 derniers mois ?</label>
-                    <select name="V14_Chute_12m"><option value="Non">Non</option><option value="Oui">Oui</option></select>
-                </div>
-                <div class="form-group">
-                    <label>15. Nombre de chutes</label>
-                    <input type="number" name="V15_Nb_Chutes" min="0">
-                </div>
-                <div class="form-group">
-                    <label>16. État de conscience lors de la chute</label>
-                    <select name="V16_Conscience">
-                        <option value="Conscient">Conscient</option>
-                        <option value="Perte de connaissance">Perte de connaissance</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>17. Lieu de la chute</label>
-                    <select name="V17_Lieu_Chute"><option value="Domicile">Domicile</option><option value="Exterieur">Extérieur</option></select>
-                </div>
-            </fieldset>
+            </section>
 
-            <fieldset>
-                <legend>Autonomie fonctionnelle (ADL)</legend>
-                <div class="grid-2">
-                    <label>Toilette <input type="number" class="score-adl" name="V20" min="0" max="1" value="1"></label>
-                    <label>Habillage <input type="number" class="score-adl" name="V21" min="0" max="1" value="1"></label>
-                    <label>Alimentation <input type="number" class="score-adl" name="V22" min="0" max="1" value="1"></label>
-                    <label>Transferts <input type="number" class="score-adl" name="V23" min="0" max="1" value="1"></label>
-                    <label>Continence <input type="number" class="score-adl" name="V24" min="0" max="1" value="1"></label>
-                    <label>Déplacement <input type="number" class="score-adl" name="V25" min="0" max="1" value="1"></label>
+            <section class="form-section">
+                <h2 class="section-title">III. Autonomie (ADL)</h2>
+                <p class="instruction">0 = Dépendant, 1 = Autonome</p>
+                <div class="score-grid">
+                    <label>Toilette (V20) <input type="number" class="adl" name="V20" min="0" max="1" value="1"></label>
+                    <label>Habillage (V21) <input type="number" class="adl" name="V21" min="0" max="1" value="1"></label>
+                    <label>Alimentation (V22) <input type="number" class="adl" name="V22" min="0" max="1" value="1"></label>
+                    <label>Transferts (V23) <input type="number" class="adl" name="V23" min="0" max="1" value="1"></label>
+                    <label>Continence (V24) <input type="number" class="adl" name="V24" min="0" max="1" value="1"></label>
+                    <label>Déplacement (V25) <input type="number" class="adl" name="V25" min="0" max="1" value="1"></label>
                 </div>
-                <div class="score-box">Score ADL : <span id="val-adl">6</span>/6</div>
-                <input type="hidden" name="V26_Total_ADL" id="V26">
-            </fieldset>
+                <div class="total-bar">Score total ADL (V26) : <span id="res-adl">6</span> / 6</div>
+                <input type="hidden" name="V26" id="V26_hid" value="6">
+            </section>
 
-            <fieldset>
-                <legend>Peur de tomber (FES-I)</legend>
-                <div class="form-group"><label>Se lever d'une chaise (V27)</label><input type="number" class="score-fes" name="V27" min="1" max="4" value="1"></div>
-                <div class="form-group"><label>S'habiller (V28)</label><input type="number" class="score-fes" name="V28" min="1" max="4" value="1"></div>
-                <div class="form-group"><label>Douche (V29)</label><input type="number" class="score-fes" name="V29" min="1" max="4" value="1"></div>
-                <div class="score-box">Score FES-I : <span id="val-fes">3</span></div>
-                <input type="hidden" name="V34_Total_FES" id="V34">
-            </fieldset>
+            <section class="form-section">
+                <h2 class="section-title">IV. Peur de tomber (FES-I court)</h2>
+                <p class="instruction">1=Pas du tout, 2=Un peu, 3=Assez, 4=Beaucoup</p>
+                <div class="input-grid">
+                    <div class="field"><label>Se lever d'une chaise (V27)</label><input type="number" class="fes" name="V27" min="1" max="4" value="1"></div>
+                    <div class="field"><label>S'habiller (V28)</label><input type="number" class="fes" name="V28" min="1" max="4" value="1"></div>
+                    <div class="field"><label>Prendre un bain/douche (V29)</label><input type="number" class="fes" name="V29" min="1" max="4" value="1"></div>
+                    <div class="field"><label>Faire ses courses (V30)</label><input type="number" class="fes" name="V30" min="1" max="4" value="1"></div>
+                    <div class="field"><label>Monter/Descendre escalier (V31)</label><input type="number" class="fes" name="V31" min="1" max="4" value="1"></div>
+                    <div class="field"><label>Objet en hauteur (V32)</label><input type="number" class="fes" name="V32" min="1" max="4" value="1"></div>
+                    <div class="field"><label>Marcher dehors (V33)</label><input type="number" class="fes" name="V33" min="1" max="4" value="1"></div>
+                </div>
+                <div class="total-bar">Score total FES-I (V34) : <span id="res-fes">7</span></div>
+                <input type="hidden" name="V34" id="V34_hid" value="7">
+            </section>
 
-            <fieldset>
-                <legend>Environnement et Santé</legend>
-                <label><input type="checkbox" name="V36"> Sol glissant</label><br>
-                <label><input type="checkbox" name="V37"> Éclairage insuffisant</label><br>
-                <label><input type="checkbox" name="V42"> Plus de 3 médicaments/jour</label><br>
-                <label><input type="checkbox" name="V43"> Maladies chroniques</label>
-            </fieldset>
-
-            <fieldset>
-                <legend>Évaluation Gériatrique (Vision / Audition)</legend>
-                <div class="form-group">
-                    <label>45. Acuité visuelle (Monoyer)</label>
-                    <select name="V45_Vision">
-                        <option value="Normale">≥ 8/10 (Normale)</option>
-                        <option value="Baisse"> < 8/10 (Baisse)</option>
-                    </select>
+            <section class="form-section">
+                <h2 class="section-title">V. Environnement et Santé</h2>
+                <div class="field">
+                    <label>35. TUG - Chronométrage</label>
+                    <select name="V35"><option value="Normal">≤ 12s</option><option value="Risque">> 12s</option></select>
                 </div>
-                <div class="form-group">
-                    <label>46. Port de lunettes ?</label>
-                    <select name="V46_Lunettes"><option value="Oui">Oui</option><option value="Non">Non</option></select>
-                </div>
-                <div class="form-group">
-                    <label>47. Difficultés avec obstacles ?</label>
-                    <select name="V47_Obstacles"><option value="Non">Non</option><option value="Oui">Oui</option></select>
-                </div>
-                <div class="form-group">
-                    <label>48. Examen ophtalmo < 12 mois ?</label>
-                    <select name="V48_Examen">
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>49. Troubles auditifs ?</label>
-                    <select name="V49_Audition">
-                        <option value="Non">Non (Audition normale)</option>
-                        <option value="Oui">Oui (Troubles auditifs)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>50. Perte d'appétit ?</label>
-                    <select name="V50_Appetit"><option value="Non">Non</option><option value="Oui">Oui</option></select>
-                </div>
-                <div class="form-group">
-                    <label>51. Perte de poids ?</label>
-                    <select name="V51_Poids"><option value="Non">Non</option><option value="Oui">Oui</option></select>
-                </div>
-            </fieldset>
-
-            <button type="submit" class="btn">Envoyer le Questionnaire</button>
-        </form>
-        <div id="response-msg"></div>
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="V36"> 36. Sol glissant</label>
+                    <label><input type="checkbox" name="V37"> 37. Éclairage insuffisant</label>
+                    <label><input type="checkbox" name="V38"> 38. Tapis non fixés</label>
+                    <label><input type="checkbox" name="V39"> 39. Pas de rampe escalier</label>
