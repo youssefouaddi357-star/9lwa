@@ -24,6 +24,8 @@
         <section id="questionnaire">
             <h2>Questionnaire</h2>
             <form id="data-form" name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" />
+                
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -51,12 +53,12 @@
 
                 <button type="submit" class="btn">Submit Data</button>
             </form>
-            <div id="response-msg"></div>
+            <div id="response-msg" style="margin-top: 15px; color: #2563eb; font-weight: bold;"></div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 My Personal Site</p>
+        <p style="text-align: center; padding: 20px;">&copy; 2026 My Personal Site</p>
     </footer>
 
     <script src="script.js"></script>
