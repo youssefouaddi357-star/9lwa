@@ -1,29 +1,34 @@
-function calculate() {
+function updateScores() {
+    // Calcul ADL (V26)
     let adl = 0;
-    document.querySelectorAll('.score-adl').forEach(i => adl += parseInt(i.value || 0));
-    document.getElementById('val-adl').innerText = adl;
-    document.getElementById('V26').value = adl;
+    document.querySelectorAll('.adl').forEach(i => adl += parseInt(i.value || 0));
+    document.getElementById('res-adl').innerText = adl;
+    document.getElementById('V26_hid').value = adl;
 
+    // Calcul FES-I (V34)
     let fes = 0;
-    document.querySelectorAll('.score-fes').forEach(i => fes += parseInt(i.value || 0));
-    document.getElementById('val-fes').innerText = fes;
-    document.getElementById('V34').value = fes;
+    document.querySelectorAll('.fes').forEach(i => fes += parseInt(i.value || 0));
+    document.getElementById('res-fes').innerText = fes;
+    document.getElementById('V34_hid').value = fes;
 }
 
-document.querySelectorAll('.score-adl, .score-fes').forEach(el => el.addEventListener('input', calculate));
+document.querySelectorAll('.adl, .fes').forEach(el => el.addEventListener('input', updateScores));
 
-document.getElementById('data-form').addEventListener('submit', function(e) {
+document.getElementById('main-survey').addEventListener('submit', function(e) {
     e.preventDefault();
+    const status = document.getElementById('status');
+    status.innerHTML = "Envoi en cours...";
+    
     const formData = new FormData(this);
     fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
     }).then(() => {
-        document.getElementById('response-msg').innerText = "✅ Succès ! Données enregistrées.";
+        status.innerHTML = "<p style='color:green; text-align:center; padding:20px;'>✅ Rapport envoyé avec succès !</p>";
         this.reset();
-        calculate();
-    }).catch(error => alert(error));
+        updateScores();
+    }).catch(err => status.innerHTML = "❌ Erreur : " + err);
 });
 
-calculate(); // Initialise les scores
+updateScores();
