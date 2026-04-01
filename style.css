@@ -1,55 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-header {
-    background-color: #2563eb;
-    color: white;
-    text-align: center;
-    padding: 40px 0;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.btn {
-    background-color: #2563eb;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background-color: #1d4ed8;
-}
+:root { --blue: #2563eb; --bg: #f1f5f9; }
+body { font-family: sans-serif; background: var(--bg); margin: 0; color: #334155; }
+.container { max-width: 800px; margin: auto; padding: 20px; }
+header { background: var(--blue); color: white; text-align: center; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+fieldset { background: white; border: none; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+legend { font-weight: bold; color: var(--blue); font-size: 1.2em; margin-bottom: 10px; }
+.form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
+label { font-weight: 500; margin-bottom: 5px; }
+input, select { padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.checkbox-list { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 10px; }
+.score-display { background: #dbeafe; padding: 10px; margin-top: 10px; font-weight: bold; border-radius: 4px; border-left: 4px solid var(--blue); }
+.btn { background: var(--blue); color: white; border: none; width: 100%; padding: 15px; border-radius: 5px; font-size: 1.1em; cursor: pointer; transition: 0.3s; }
+.btn:hover { background: #1d4ed8; }
